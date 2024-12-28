@@ -1,4 +1,3 @@
-spring.application.name=logistics
 mybatis-plus:
     global-config:
         enable-sql-runner: true

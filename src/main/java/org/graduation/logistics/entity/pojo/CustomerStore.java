@@ -8,4 +8,5 @@ public class CustomerStore {
     private Integer storeId;
     private Double surplus;
     private Integer level;
+    private Boolean enabled;
 }
