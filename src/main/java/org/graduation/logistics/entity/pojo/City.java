@@ -11,4 +11,5 @@ public class City {
     private String chineseName;
     private String englishName;
     private Integer provinceId;
+    private String zipCode;
 }

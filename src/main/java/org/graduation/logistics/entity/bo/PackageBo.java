@@ -1,14 +1,11 @@
-package org.graduation.logistics.entity.pojo;
+package org.graduation.logistics.entity.bo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import lombok.Data;
-
-@Data
-public class Package {
-    @TableId(type = IdType.AUTO)
+public class PackageBo {
     private Integer packageId;
     private Integer SKU;
+    private Integer productId;
+    private String productName;
+    private String productProfile;
     private Integer amount;
     private Double weight;
     private Double height;
@@ -16,4 +13,5 @@ public class Package {
     private Double insured;
     private Double totalPrice;
     private Integer storeId;
+    private String storeName;
 }

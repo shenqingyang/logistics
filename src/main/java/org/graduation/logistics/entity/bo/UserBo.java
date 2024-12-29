@@ -6,12 +6,10 @@ import lombok.Data;
 public class UserBo {
     private Integer userId;
     private String userName;
-    private String password;
     private String profile;
     private Integer roleId;
     private String roleName;
     private String phone;
-    private String loginAccount;
     private Integer warehouseId;
     private String warehouseName;
     private Integer storeId;
@@ -25,12 +23,10 @@ public class UserBo {
         return "UserBo{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
                 ", profile='" + profile + '\'' +
                 ", roleId=" + roleId +
                 ", roleName='" + roleName + '\'' +
                 ", phone='" + phone + '\'' +
-                ", loginAccount='" + loginAccount + '\'' +
                 ", warehouseId=" + warehouseId +
                 ", warehouseName='" + warehouseName + '\'' +
                 ", storeId=" + storeId +

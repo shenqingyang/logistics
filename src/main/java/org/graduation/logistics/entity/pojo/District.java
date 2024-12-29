@@ -11,4 +11,5 @@ public class District {
     private String chineseName;
     private String englishName;
     private Integer cityId;
+    private String zipCode;
 }

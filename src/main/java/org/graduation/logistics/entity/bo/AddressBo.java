@@ -12,7 +12,29 @@ public class AddressBo {
     private String cityName;
     private Integer provinceId;
     private String provinceName;
+    private Integer districtId;
+    private String districtName;
     private String location;
+    private String zipCode;
     private Byte type;
     private Integer userId;
+    @Override
+    public String toString() {
+        return "AddressBo{" +
+                "addressId=" + addressId +
+                ", name='" + name + '\'' +
+                ", countryId=" + countryId +
+                ", countryName='" + countryName + '\'' +
+                ", cityId=" + cityId +
+                ", cityName='" + cityName + '\'' +
+                ", provinceId=" + provinceId +
+                ", provinceName='" + provinceName + '\'' +
+                ", districtId=" + districtId +
+                ", districtName='" + districtName + '\'' +
+                ", location='" + location + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", type=" + type +
+                ", userId=" + userId +
+                '}';
+    }
 }
