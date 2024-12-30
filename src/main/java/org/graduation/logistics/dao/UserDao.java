@@ -33,7 +33,7 @@ public interface UserDao extends BaseMapper<User> {
             "LEFT JOIN company c ON u.company_id = c.company_id " +
             "WHERE u.user_id = #{userId} " +
             "</script>")
-    UserBo selectUserBoByUserId(@Param("userId") Integer userId, @Param("language") Byte language);
+    UserBo selectUserBoByUserId(@Param("userId") Integer userId, @Param("language") Integer language);
     @Select("<script>" +
             "SELECT " +
             "u.user_id AS userId, " +
@@ -57,7 +57,7 @@ public interface UserDao extends BaseMapper<User> {
             "LEFT JOIN company c ON u.company_id = c.company_id " +
             "WHERE u.company_id = #{companyId} " +
             "</script>")
-    List<UserBo> selectUserBosByCompanyId(@Param("companyId") Integer companyId, @Param("language") Byte language);
+    List<UserBo> selectUserBosByCompanyId(@Param("companyId") Integer companyId, @Param("language") Integer language);
     @Select("<script>" +
             "SELECT " +
             "c.user_id as userId, " +

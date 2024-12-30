@@ -15,6 +15,7 @@ public class User {
     private String profile;
     private String department;
     private String post;
+    private Integer roleId;
     private Integer warehouseId;
     private Integer storeId;
     private Integer companyId;

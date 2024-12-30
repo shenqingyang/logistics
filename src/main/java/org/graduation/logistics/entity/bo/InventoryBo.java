@@ -4,10 +4,10 @@ import lombok.Data;
 
 @Data
 public class InventoryBo {
-    private Integer SKU;
+    private Integer inventoryId;
+    private String SKU;
     private Integer productId;
     private String productName;
-    private String productProfile;
     private String description;
     private Integer amount;
     private Integer warehouseId;

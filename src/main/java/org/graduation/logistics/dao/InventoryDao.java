@@ -11,10 +11,10 @@ import java.util.List;
 public interface InventoryDao extends BaseMapper<Inventory> {
     @Select("<script>"
             + "SELECT "
+            + "i.inventory_id AS inventoryId, "
             + "i.SKU, "
             + "i.product_id AS productId, "
             + "CASE WHEN #{language} = 1 THEN p.chinese_name ELSE p.english_name END AS productName, "
-            + "p.profile AS productProfile, "
             + "i.description, "
             + "i.amount, "
             + "i.warehouse_id AS warehouseId, "
@@ -27,10 +27,10 @@ public interface InventoryDao extends BaseMapper<Inventory> {
     List<InventoryBo> selectInventoryBosByWarehouseId(@Param("warehouseId") Integer warehouseId, @Param("language") Integer language);
     @Select("<script>"
             + "SELECT "
+            + "i.inventory_id AS inventoryId, "
             + "i.SKU, "
             + "i.product_id AS productId, "
             + "CASE WHEN #{language} = 1 THEN p.chinese_name ELSE p.english_name END AS productName, "
-            + "p.profile AS productProfile, "
             + "i.description, "
             + "i.amount, "
             + "i.warehouse_id AS warehouseId, "
@@ -38,7 +38,7 @@ public interface InventoryDao extends BaseMapper<Inventory> {
             + "FROM inventory i "
             + "LEFT JOIN product p ON i.product_id = p.product_id "
             + "LEFT JOIN warehouse w ON i.warehouse_id = w.warehouse_id "
-            + "WHERE i.SKU = #{SKU} "
+            + "WHERE i.inventory_id = #{inventoryId} "
             + "</script>")
-    InventoryBo selectInventoryBoBySKU(@Param("SKU") Integer SKU, @Param("language") Integer language);
+    InventoryBo selectInventoryBoByInventoryId(@Param("inventoryId") Integer inventoryId, @Param("language") Integer language);
 }

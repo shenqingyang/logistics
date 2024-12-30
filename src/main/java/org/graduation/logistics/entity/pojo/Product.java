@@ -12,5 +12,4 @@ public class Product {
     private String chineseName;
     private String englishName;
     private Double price;
-    private String profile;
 }
