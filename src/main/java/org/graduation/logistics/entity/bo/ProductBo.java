@@ -1,5 +1,8 @@
 package org.graduation.logistics.entity.bo;
 
+import lombok.Data;
+
+@Data
 public class ProductBo {
     private Integer productId;
     private Integer companyId;

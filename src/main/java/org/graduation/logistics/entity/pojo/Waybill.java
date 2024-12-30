@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 public class Waybill {
     @TableId(type = IdType.AUTO)
     private Integer waybillId;
+    private Integer userId;
     private Integer senderAddressId;
     private Integer receiverAddressId;
     private Integer packageId;
@@ -17,4 +18,12 @@ public class Waybill {
     private Integer channelId;
     private Byte status;
     private Integer storeId;
+    private Byte logisticsType;
+    private Timestamp createdTime;
+    private Timestamp paidTime;
+    private Timestamp sentToHubTime;
+    private Timestamp shippedFromHubTime;
+    private Timestamp arrivedCustomsTime;
+    private Timestamp deliveryTime;
+    private Timestamp deliveryConfirmationTime;
 }

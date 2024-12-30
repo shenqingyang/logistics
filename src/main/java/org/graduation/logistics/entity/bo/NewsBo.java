@@ -3,12 +3,12 @@ package org.graduation.logistics.entity.bo;
 import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.List;
 @Data
-public class MasterWaybillBo {
-    private Integer masterWaybillId;
+public class NewsBo {
+    private Integer newsId;
+    private String title;
+    private String content;
     private Timestamp createTime;
-    private Integer storeId;
     private Integer companyId;
-    List<WaybillBo> waybills;
+    private String companyName;
 }

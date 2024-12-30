@@ -14,6 +14,7 @@ public interface AddressDao extends BaseMapper<Address> {
             "a.address_id as addressId, " +
             "a.name as name, " +
             "a.country_id as countryId, " +
+            "a.phone as phone" +
             "COALESCE(CASE WHEN #{language} = 1 THEN c.chinese_name ELSE c.english_name END, '') as countryName, " +
             "a.city_id as cityId, " +
             "COALESCE(CASE WHEN #{language} = 1 THEN ct.chinese_name ELSE ct.english_name END, '') as cityName, " +
@@ -33,7 +34,7 @@ public interface AddressDao extends BaseMapper<Address> {
             "WHERE a.user_id = #{userId} " +
             "AND a.type = #{type} " +
             "</script>")
-    List<AddressBo> selectAddressBosByUserIdType(@Param("userId") Integer userId,
+    List<AddressBo> selectAddressBosByUserIdAndType(@Param("userId") Integer userId,
                                                            @Param("type") Byte type,
                                                            @Param("language") Byte language);
     @Select("<script>" +
@@ -41,6 +42,7 @@ public interface AddressDao extends BaseMapper<Address> {
             "a.address_id as addressId, " +
             "a.name as name, " +
             "a.country_id as countryId, " +
+            "a.phone as phone" +
             "COALESCE(CASE WHEN #{language} = 1 THEN c.chinese_name ELSE c.english_name END, '') as countryName, " +
             "a.city_id as cityId, " +
             "COALESCE(CASE WHEN #{language} = 1 THEN ct.chinese_name ELSE ct.english_name END, '') as cityName, " +
@@ -57,9 +59,9 @@ public interface AddressDao extends BaseMapper<Address> {
             "LEFT JOIN city ct ON a.city_id = ct.city_id " +
             "LEFT JOIN province p ON a.province_id = p.province_id " +
             "LEFT JOIN district d ON a.district_id = d.district_id " +
-            "WHERE a.address_id = #{id} " +
+            "WHERE a.address_id = #{addressId} " +
             "</script>")
-    AddressBo selectAddressBoById(@Param("id") Integer id,@Param("language") Byte language);
+    AddressBo selectAddressBoByAddressId(@Param("addressId") Integer addressId,@Param("language") Byte language);
 
 
 }

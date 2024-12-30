@@ -17,4 +17,5 @@ public class Address {
     private String zipCode;
     private Byte type;
     private Integer userId;
+    private String phone;
 }

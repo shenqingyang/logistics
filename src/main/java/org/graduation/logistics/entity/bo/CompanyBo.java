@@ -1,9 +1,10 @@
 package org.graduation.logistics.entity.bo;
 
+import lombok.Data;
 import org.graduation.logistics.entity.pojo.Company;
 
 import java.util.List;
-
+@Data
 public class CompanyBo {
     private Integer companyId;
     private String name;

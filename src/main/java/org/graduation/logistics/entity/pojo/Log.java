@@ -12,8 +12,8 @@ public class Log {
     private Integer logId;
     private Timestamp time;
     private Integer userId;
-    private Byte operationType;
-    private Integer changeId;
+    private Byte operationType;//1为登录，2为修改
+    private Integer changeId;//1：记录客户userId 2：记录waybillId 3.记录masterWaybillId 4.记录newsId 5.记录channelId
     private Integer companyId;
     private Integer storeId;
     private Integer warehouseId;

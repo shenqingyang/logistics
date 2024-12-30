@@ -18,6 +18,7 @@ public class AddressBo {
     private String zipCode;
     private Byte type;
     private Integer userId;
+    private String phone;
     @Override
     public String toString() {
         return "AddressBo{" +
