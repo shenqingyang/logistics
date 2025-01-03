@@ -26,5 +26,5 @@ public interface UserService {
     int deleteRolePermission(int roleId,int permissionId);
     int updateRolePermission(RolePermission rolePermission);
     List<RolePermission> selectRolePermissionByRoleId(int roleId);
-    boolean checkRolePermission(int roleId,int permissionCode);
+    boolean checkRolePermission(int userId,int permissionCode);
 }

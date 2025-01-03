@@ -2,13 +2,15 @@ package org.graduation.logistics.entity.bo;
 
 import lombok.Data;
 
+import java.util.List;
+
+
 @Data
 public class UserBo {
     private Integer userId;
     private String userName;
     private String profile;
-    private Integer roleId;
-    private String roleName;
+    private List<RoleBo> roles;
     private String phone;
     private Integer warehouseId;
     private String warehouseName;
@@ -24,8 +26,6 @@ public class UserBo {
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", profile='" + profile + '\'' +
-                ", roleId=" + roleId +
-                ", roleName='" + roleName + '\'' +
                 ", phone='" + phone + '\'' +
                 ", warehouseId=" + warehouseId +
                 ", warehouseName='" + warehouseName + '\'' +

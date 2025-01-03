@@ -2,6 +2,7 @@ package org.graduation.logistics.entity.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -20,4 +21,6 @@ public class Material {
     private Timestamp createTime;
     private Integer applicantId;
     private Integer completePeopleId;
+    @TableLogic //逻辑删除
+    private Integer deleted;
 }

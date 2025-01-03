@@ -15,8 +15,6 @@ public interface UserDao extends BaseMapper<User> {
             "u.user_id AS userId, " +
             "u.user_name AS userName, " +
             "u.profile AS profile, " +
-            "u.role_id AS roleId, " +
-            "r.name AS roleName, " +
             "u.phone AS phone, " +
             "u.warehouse_id AS warehouseId, " +
             "COALESCE(CASE WHEN #{language} = 1 THEN w.chinese_name ELSE w.english_name END, '') AS warehouseName, " +
@@ -27,7 +25,6 @@ public interface UserDao extends BaseMapper<User> {
             "u.department AS department, " +
             "u.post AS post " +
             "FROM user u " +
-            "LEFT JOIN role r ON u.role_id = r.role_id " +
             "LEFT JOIN warehouse w ON u.warehouse_id = w.warehouse_id " +
             "LEFT JOIN store s ON u.store_id = s.store_id " +
             "LEFT JOIN company c ON u.company_id = c.company_id " +
@@ -39,8 +36,6 @@ public interface UserDao extends BaseMapper<User> {
             "u.user_id AS userId, " +
             "u.user_name AS userName, " +
             "u.profile AS profile, " +
-            "u.role_id AS roleId, " +
-            "r.name AS roleName, " +
             "u.phone AS phone, " +
             "u.warehouse_id AS warehouseId, " +
             "COALESCE(CASE WHEN #{language} = 1 THEN w.chinese_name ELSE w.english_name END, '') AS warehouseName, " +
@@ -51,7 +46,6 @@ public interface UserDao extends BaseMapper<User> {
             "u.department AS department, " +
             "u.post AS post " +
             "FROM user u " +
-            "LEFT JOIN role r ON u.role_id = r.role_id " +
             "LEFT JOIN warehouse w ON u.warehouse_id = w.warehouse_id " +
             "LEFT JOIN store s ON u.store_id = s.store_id " +
             "LEFT JOIN company c ON u.company_id = c.company_id " +

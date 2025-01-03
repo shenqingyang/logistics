@@ -5,6 +5,7 @@ import jakarta.annotation.Resource;
 import org.graduation.logistics.dao.RoleDao;
 import org.graduation.logistics.dao.RolePermissionDao;
 import org.graduation.logistics.dao.UserDao;
+import org.graduation.logistics.dao.UserRoleDao;
 import org.graduation.logistics.entity.bo.CustomerBo;
 import org.graduation.logistics.entity.bo.UserBo;
 import org.graduation.logistics.entity.pojo.Role;
@@ -21,6 +22,9 @@ public class UserServiceImpl implements UserService {
     private RoleDao roleDao;
     @Resource
     private RolePermissionDao rolePermissionDao;
+    @Resource
+    private UserRoleDao userRoleDao;
+
     @Override
     public int addUser(User user) {
         return userDao.insert(user);
@@ -116,7 +120,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean checkRolePermission(int roleId, int permissionCode) {
-        return rolePermissionDao.selectCount(new LambdaQueryWrapper<RolePermission>().eq(RolePermission::getRoleId,roleId).eq(RolePermission::getPermissionCode,permissionCode)) > 0;
+    public boolean checkRolePermission(int userId, int permissionCode) {
+        return rolePermissionDao.checkPermissionByUserId(userId,permissionCode) > 0;
     }
 }

@@ -2,6 +2,7 @@ package org.graduation.logistics.entity.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -26,4 +27,6 @@ public class Waybill {
     private Timestamp arrivedCustomsTime;
     private Timestamp deliveryTime;
     private Timestamp deliveryConfirmationTime;
+    @TableLogic //逻辑删除
+    private Integer deleted;
 }

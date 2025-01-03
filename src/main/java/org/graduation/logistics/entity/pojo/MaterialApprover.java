@@ -1,5 +1,6 @@
 package org.graduation.logistics.entity.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -11,4 +12,6 @@ public class MaterialApprover {
     private Timestamp completeTime;
     private Integer order;
     private Byte status;
+    @TableLogic //逻辑删除
+    private Integer deleted;
 }

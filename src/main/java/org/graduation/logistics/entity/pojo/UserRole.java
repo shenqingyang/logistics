@@ -4,12 +4,9 @@ import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 @Data
-public class CustomerStore {
+public class UserRole {
     private Integer userId;
-    private Integer storeId;
-    private Double surplus;
-    private Integer level;
-    private Boolean enabled;
+    private Integer roleId;
     @TableLogic //逻辑删除
     private Integer deleted;
 }
